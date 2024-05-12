@@ -1,4 +1,4 @@
-# B15 Class Repository - DevOps Insiders 📚👩‍💻
+# B16 Class Repository - DevOps Insiders 📚👩‍💻
 
 Welcome to the official repository for B15 at DevOps Insiders! 🚀 Here, you'll find a meticulously organized collection of class notes, assignments, and code snippets generated during our engaging sessions.
 
@@ -27,4 +27,4 @@ DevOps Insiders is a leading institute fostering knowledge in DevOps practices. 
 2. Navigate to relevant folders for class notes, assignments, or code samples.
 3. Stay updated with the latest changes and additions by pulling the latest updates.
 
-Happy learning, B15!  🚀🚀📖
+Happy learning, B16!  🚀🚀📖
