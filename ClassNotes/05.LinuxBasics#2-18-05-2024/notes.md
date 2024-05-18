@@ -24,3 +24,8 @@
    - *Purpose:* Creates a new directory.
    - *Example:* `mkdir new_folder`
    - *Output:* (No output if successful)   
+
+6. **rm:**
+   - *Purpose:* Removes (deletes) files.
+   - *Example:* `rm unwanted_file.txt`
+   - *Output:* (No output if successful)   
