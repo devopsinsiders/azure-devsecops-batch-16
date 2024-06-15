@@ -1,0 +1,1 @@
+Only the diagrams are new, Please read all older notes, This will cover all the things.
