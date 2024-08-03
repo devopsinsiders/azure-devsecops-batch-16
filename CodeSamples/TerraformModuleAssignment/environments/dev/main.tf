@@ -10,11 +10,13 @@ module "storage_account" {
 }
 
 module "vnet" {
-  source = "../../modules/azurerm_virtual_network"
-  vnets  = var.vnets
+  depends_on = [module.rg]
+  source     = "../../modules/azurerm_virtual_network"
+  vnets      = var.vnets
 }
 
 module "subnets" {
-  source = "../../modules/azurerm_subnet"
-  subnets = var.snets
+  depends_on = [module.vnet]
+  source     = "../../modules/azurerm_subnet"
+  subnets    = var.snets
 }
