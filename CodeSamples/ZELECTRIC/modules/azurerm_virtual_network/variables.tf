@@ -1,0 +1,1 @@
+variable "vnet_details" {}
