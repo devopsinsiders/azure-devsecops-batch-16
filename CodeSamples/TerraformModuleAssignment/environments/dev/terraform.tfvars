@@ -41,3 +41,8 @@ snets = {
     address_prefixes     = ["10.0.1.0/24"]
   }
 }
+
+common_tags = {
+  department = "IT"
+  colour     = "blue"
+}

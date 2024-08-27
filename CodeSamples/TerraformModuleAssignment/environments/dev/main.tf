@@ -1,6 +1,9 @@
+variable "common_tags" {}
+variable "version" {}
+
 module "rg" {
-  source     = "../../modules/azurerm_resource_group"
-  rg_details = var.rgs
+  source      = "../../modules/azurerm_resource_group"
+  rg_details  = var.rgs
 }
 
 module "storage_account" {
