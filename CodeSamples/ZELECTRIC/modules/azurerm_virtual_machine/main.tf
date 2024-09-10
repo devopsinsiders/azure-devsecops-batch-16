@@ -2,6 +2,17 @@ variable "vms" {
   type = map(any)
 }
 
+resource "azurerm_public_ip" "example" {
+  name                = "${each.value.vm_name}-password"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  allocation_method   = "Static"
+
+  tags = {
+    environment = "Production"
+  }
+}
+
 data "azurerm_subnet" "subnet" {
   for_each             = var.vms
   name                 = each.value.subnet_name
