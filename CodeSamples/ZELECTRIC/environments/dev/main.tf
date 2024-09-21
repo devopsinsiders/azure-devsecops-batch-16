@@ -28,17 +28,24 @@ module "subnets" {
   subnets    = var.subnets
 }
 
+module "availability_set" {
+  source                = "../../modules/azurerm_availability_set"
+  availability_set_name = "dhondu-set"
+  location              = "centralus"
+  rg_name               = "rg-dev-zelectric"
+}
+
 module "vms" {
-  depends_on = [module.subnets]
+  depends_on = [module.subnets, module.key_vault,module.availability_set]
   source     = "../../modules/azurerm_virtual_machine"
   vms        = var.vms
 }
 
-# module "bastion" {
-#   depends_on = [module.subnets]
-#   source     = "../../modules/azurerm_bastion"
-#   bastions   = var.bastions
-# }
+module "bastion" {
+  depends_on = [module.subnets]
+  source     = "../../modules/azurerm_bastion"
+  bastions   = var.bastions
+}
 
 
 

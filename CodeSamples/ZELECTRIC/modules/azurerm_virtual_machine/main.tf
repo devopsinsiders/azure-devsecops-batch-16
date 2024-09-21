@@ -2,15 +2,10 @@ variable "vms" {
   type = map(any)
 }
 
-resource "azurerm_public_ip" "example" {
-  name                = "${each.value.vm_name}-password"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
-  allocation_method   = "Static"
-
-  tags = {
-    environment = "Production"
-  }
+data "azurerm_availability_set" "set" {
+  for_each            = var.vms
+  name                = each.value.availability_set_name
+  resource_group_name = each.value.resource_group_name
 }
 
 data "azurerm_subnet" "subnet" {
@@ -59,6 +54,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   resource_group_name             = each.value.resource_group_name
   location                        = each.value.location
   size                            = each.value.size
+  availability_set_id             = data.azurerm_availability_set.set[each.key].id
   admin_username                  = "devopsadmin"
   admin_password                  = azurerm_key_vault_secret.password[each.key].value
   disable_password_authentication = false

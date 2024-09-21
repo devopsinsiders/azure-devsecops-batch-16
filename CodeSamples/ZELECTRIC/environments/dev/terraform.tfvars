@@ -37,24 +37,26 @@ subnets = {
 
 vms = {
   vm1 = {
-    subnet_name          = "frontend-subnet"
-    virtual_network_name = "vnet-zelectric"
-    resource_group_name  = "rg-dev-zelectric"
-    nic_name             = "dhondhuvm-nic"
-    location             = "centralindia"
-    vm_name              = "dhondhuvm"
-    size                 = "Standard_F2"
-    kv_name              = "kv786test1432"
+    subnet_name           = "frontend-subnet"
+    virtual_network_name  = "vnet-zelectric"
+    resource_group_name   = "rg-dev-zelectric"
+    nic_name              = "dhondhuvm-nic"
+    location              = "centralus"
+    vm_name               = "dhondhuvm"
+    size                  = "Standard_F2"
+    kv_name               = "kv786test1439"
+    availability_set_name = "dhondu-set"
   }
   vm2 = {
-    subnet_name          = "frontend-subnet"
-    virtual_network_name = "vnet-zelectric"
-    resource_group_name  = "rg-dev-zelectric"
-    nic_name             = "tonduvm-nic"
-    location             = "centralus"
-    vm_name              = "tonduvm"
-    size                 = "Standard_F2"
-    kv_name              = "kv786test1432"
+    subnet_name           = "frontend-subnet"
+    virtual_network_name  = "vnet-zelectric"
+    resource_group_name   = "rg-dev-zelectric"
+    nic_name              = "tonduvm-nic"
+    location              = "centralus"
+    vm_name               = "tonduvm"
+    size                  = "Standard_F2"
+    kv_name               = "kv786test1439"
+    availability_set_name = "dhondu-set"
   }
 }
 
@@ -70,7 +72,7 @@ bastions = {
 
 key_vaults = {
   kv1 = {
-    kv_name  = "kv786test1432"
+    kv_name  = "kv786test1439"
     location = "centralus"
     rg_name  = "rg-dev-zelectric"
   }
