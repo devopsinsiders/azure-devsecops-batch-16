@@ -2,7 +2,15 @@ rgs = {
   rg1 = {
     name     = "rg-dev-zelectric"
     location = "centralus"
+    tags = {
+      env     = "dev"
+      company = "dhondhu"
+    }
   }
+  rg2 = {
+    name     = "rg-dev-zelectric2"
+    location = "centralus"
+  }  
 }
 
 vnets = {
@@ -43,8 +51,8 @@ vms = {
     nic_name              = "dhondhuvm-nic"
     location              = "centralus"
     vm_name               = "dhondhuvm"
-    size                  = "Standard_F2"
-    kv_name               = "kv786test1439"
+    size                  = "Standard_B1s"
+    kv_name               = "kv786test786"
     availability_set_name = "dhondu-set"
   }
   vm2 = {
@@ -54,8 +62,19 @@ vms = {
     nic_name              = "tonduvm-nic"
     location              = "centralus"
     vm_name               = "tonduvm"
-    size                  = "Standard_F2"
-    kv_name               = "kv786test1439"
+    size                  = "Standard_B1s"
+    kv_name               = "kv786test786"
+    availability_set_name = "dhondu-set"
+  }
+  vm3 = {
+    subnet_name           = "frontend-subnet"
+    virtual_network_name  = "vnet-zelectric"
+    resource_group_name   = "rg-dev-zelectric"
+    nic_name              = "prometheusvm-nic"
+    location              = "centralus"
+    vm_name               = "prometheusvm"
+    size                  = "Standard_B1s"
+    kv_name               = "kv786test786"
     availability_set_name = "dhondu-set"
   }
 }
@@ -72,7 +91,7 @@ bastions = {
 
 key_vaults = {
   kv1 = {
-    kv_name  = "kv786test1439"
+    kv_name  = "kv786test786"
     location = "centralus"
     rg_name  = "rg-dev-zelectric"
   }
