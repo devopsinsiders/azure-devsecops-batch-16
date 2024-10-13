@@ -6,8 +6,8 @@ storage_account_details = {
     account_replication_type = "LRS"
   }
   stg2 = {
-    name                     = "dhondhustor2"
-    location                 = "westus"
-    resource_group_name      = "rg-dhondhu"
-  }  
+    name                = "dhondhustor2"
+    location            = "westus"
+    resource_group_name = "rg-dhondhu"
+  }
 }

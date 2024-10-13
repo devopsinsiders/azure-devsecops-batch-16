@@ -1,2 +1,2 @@
 name = "tony"
-enable_public_ip = true
+enable_public_ip = false
