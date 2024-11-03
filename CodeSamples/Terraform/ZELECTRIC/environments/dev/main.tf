@@ -5,7 +5,7 @@ variable "vms" {}
 variable "bastions" {}
 variable "key_vaults" {}
 
-module "rg" {
+module "rg" {  
   source     = "../../modules/azurerm_resource_group"
   rg_details = var.rgs
 }

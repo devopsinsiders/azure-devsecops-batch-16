@@ -1,4 +1,3 @@
-variable "map1" {}
 variable "rg_details" {
   type = map(
     object(

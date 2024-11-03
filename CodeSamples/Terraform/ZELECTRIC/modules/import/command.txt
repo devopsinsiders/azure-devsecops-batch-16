@@ -1,0 +1,1 @@
+terraform import azurerm_resource_group.rg /subscriptions/79d1c89c-4c17-4799-bcc7-a90911821f92/resourceGroups/Tushar_Backend

@@ -1,0 +1,50 @@
+subnet1_id = {
+  "address_space" = toset([
+    "10.0.0.0/16",
+  ])
+  "bgp_community" = ""
+  "ddos_protection_plan" = tolist([])
+  "dns_servers" = tolist([])
+  "edge_zone" = ""
+  "encryption" = tolist([])
+  "flow_timeout_in_minutes" = 0
+  "guid" = "a51db6d9-a76d-4214-93a1-b4a1d1964e69"
+  "id" = "/subscriptions/79d1c89c-4c17-4799-bcc7-a90911821f92/resourceGroups/dhondhu-rg/providers/Microsoft.Network/virtualNetworks/dhondhu_vnet"
+  "location" = "eastus"
+  "name" = "dhondhu_vnet"
+  "resource_group_name" = "dhondhu-rg"
+  "subnet" = toset([
+    {
+      "address_prefixes" = tolist([
+        "10.0.1.0/24",
+      ])
+      "default_outbound_access_enabled" = true
+      "delegation" = tolist([])
+      "id" = "/subscriptions/79d1c89c-4c17-4799-bcc7-a90911821f92/resourceGroups/dhondhu-rg/providers/Microsoft.Network/virtualNetworks/dhondhu_vnet/subnets/subnet1"
+      "name" = "subnet1"
+      "private_endpoint_network_policies" = "Disabled"
+      "private_link_service_network_policies_enabled" = true
+      "route_table_id" = ""
+      "security_group" = ""
+      "service_endpoint_policy_ids" = toset([])
+      "service_endpoints" = toset([])
+    },
+    {
+      "address_prefixes" = tolist([
+        "10.0.2.0/24",
+      ])
+      "default_outbound_access_enabled" = true
+      "delegation" = tolist([])
+      "id" = "/subscriptions/79d1c89c-4c17-4799-bcc7-a90911821f92/resourceGroups/dhondhu-rg/providers/Microsoft.Network/virtualNetworks/dhondhu_vnet/subnets/subnet2"
+      "name" = "subnet2"
+      "private_endpoint_network_policies" = "Disabled"
+      "private_link_service_network_policies_enabled" = true
+      "route_table_id" = ""
+      "security_group" = ""
+      "service_endpoint_policy_ids" = toset([])
+      "service_endpoints" = toset([])
+    },
+  ])
+  "tags" = tomap({})
+  "timeouts" = null /* object */
+}
