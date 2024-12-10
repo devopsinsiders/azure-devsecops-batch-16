@@ -1,0 +1,4 @@
+job1:
+  step1: terraform init
+  step2: terraform plan
+  step3: terraform apply
