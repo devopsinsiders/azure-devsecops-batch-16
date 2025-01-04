@@ -1,0 +1,20 @@
+- task: CmdLine@2
+  condition: Always()
+  displayName: TfLint
+  inputs:
+    script: 'tflint --chdir=. --format=junit > $(System.DefaultWorkingDirectory)/tflint_report.xml'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/modules/LinuxVirtualMachine'
+
+- task: CmdLine@2
+  condition: Always()
+  displayName: Checkov
+  inputs:
+    script: 'checkov -d . -o junitxml --output-file-path $(System.DefaultWorkingDirectory)/'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/modules/LinuxVirtualMachine'
+
+- task: PublishTestResults@2
+  condition: Always()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '*.xml'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
