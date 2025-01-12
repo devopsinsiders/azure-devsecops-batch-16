@@ -1,0 +1,39 @@
+trigger: none
+pool: zelectric_pool
+
+parameters:
+- name: rollbackVersion
+  displayName: rollbackVersion
+  type: string
+
+stages:
+- stage: DeployStage
+  displayName: Deploy Stage
+  jobs: 
+  - job: DeployJob
+    displayName: Deploy Job
+    steps:
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        buildType: 'specific'
+        project: '8ec30696-cff9-4fb3-aac1-5901adce0a0c'
+        definition: '16'
+        buildVersionToDownload: 'specific'
+        pipelineId: '${{ parameters.rollbackVersion }}'
+        artifactName: 'todoui'
+        targetPath: '$(Build.ArtifactStagingDirectory)'
+    - task: SSH@0
+      inputs:
+        sshEndpoint: 'frontendvm'
+        runOptions: 'commands'
+        commands: |
+          sudo chmod -R 777 /var/www/html
+          sudo rm -rf /var/www/html/*
+        readyTimeout: '20000'
+    - task: CopyFilesOverSSH@0
+      inputs:
+        sshEndpoint: 'frontendvm'
+        sourceFolder: '$(Build.ArtifactStagingDirectory)'
+        contents: '**'
+        targetFolder: '/var/www/html/'
+        readyTimeout: '20000'
