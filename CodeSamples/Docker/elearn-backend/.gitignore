@@ -1,0 +1,40 @@
+# Ignore Visual Studio specific files
+.vs/
+
+# Ignore build outputs
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+GeneratedFiles/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Ignore logs
+*.log
+
+# Ignore environment settings
+.env
+
+# Ignore Rider and JetBrains IDE files
+.idea/
+*.sln.iml
+
+# Ignore temporary files
+$RECYCLE.BIN/
+Thumbs.db
+Desktop.ini
+
+# Ignore secrets and configuration
+appsettings.Development.json
+secrets.json

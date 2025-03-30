@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeSamples", "CodeSamples", "{35253E69-6D3E-08A5-45CE-10CBE5D7743E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{55AB73D1-9043-96CA-F0AA-C7C6646A6F69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElearnBackend", "CodeSamples\Docker\elearn-backend\ElearnBackend.csproj", "{0708DD56-957F-CAE1-E278-33C61F76F763}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0708DD56-957F-CAE1-E278-33C61F76F763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0708DD56-957F-CAE1-E278-33C61F76F763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0708DD56-957F-CAE1-E278-33C61F76F763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0708DD56-957F-CAE1-E278-33C61F76F763}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55AB73D1-9043-96CA-F0AA-C7C6646A6F69} = {35253E69-6D3E-08A5-45CE-10CBE5D7743E}
+		{0708DD56-957F-CAE1-E278-33C61F76F763} = {55AB73D1-9043-96CA-F0AA-C7C6646A6F69}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F338169-1F7B-4340-AE58-2F761E480341}
+	EndGlobalSection
+EndGlobal
