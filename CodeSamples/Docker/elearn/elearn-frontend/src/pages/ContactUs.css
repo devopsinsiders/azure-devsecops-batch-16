@@ -1,0 +1,24 @@
+/* Hero section styling with a gradient background */
+.hero-section {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Styling for the contact card */
+  .contact-card {
+    border: none;
+    border-radius: 15px;
+  }
+  
+  /* Icon color styling */
+  .icon i {
+    color: #2575fc;
+  }
+  
+  /* Optional: Adjust link hover color */
+  a.text-decoration-none:hover {
+    color: #6a11cb;
+  }
+  
