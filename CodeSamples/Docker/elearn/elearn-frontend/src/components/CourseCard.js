@@ -24,7 +24,7 @@ const CourseCard = ({ course }) => {
 
   let lessons = [];
   try {
-    lessons = JSON.parse(course.lessons);
+    lessons = course.lessons
   } catch (error) {
     console.error("Invalid lessons JSON", error);
   }

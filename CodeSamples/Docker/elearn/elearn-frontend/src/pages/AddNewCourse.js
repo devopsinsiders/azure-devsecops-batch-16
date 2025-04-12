@@ -16,10 +16,10 @@ const AddNewCourse = () => {
     const courseData = {
       courseName,
       instructorName,
-      lessons: JSON.stringify(lessonsArray)
+      lessons: lessonsArray
     };
 
-    axios.post('http://localhost:8082/api/Course', courseData)
+    axios.post('http://192.168.1.5:8085/api/Course', courseData)
       .then(response => {
         setMessage('Course added successfully!');
         setCourseName('');
