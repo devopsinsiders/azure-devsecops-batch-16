@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dhondhu-pod
+spec:
+  containers:
+  - image: nginx
+    name: nginxcontainer
+    ports:
+    - containerPort: 80    
+
+  - image: linuxserver/firefox
+    name: firefoxcontainer
+    ports:
+    - containerPort: 3000
