@@ -1,7 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: netflixpod
+  name: majnu-pod
+  labels: 
+    type: tondu
+    height: 4.5foot
 spec:
   containers:
   - image: devopsinsiders/netflix-clone
