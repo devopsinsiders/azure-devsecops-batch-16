@@ -1,9 +1,8 @@
 apiVersion: v1
 kind: Pod
-metadata:
-  name: nginx-pod
+metadata: 
+  name: dhondhu-pod
 spec: 
   containers:
-  - name: nginx
-    image: nginx:latest    
-  volumes:
+    - image: nginx
+      name: nginx-container
