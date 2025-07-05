@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: photos-app
+spec:
+  containers:
+  - name: photos-app
+    image: acrdevopsinsiders.azurecr.io/photos-app:v2
+    ports:
+      - containerPort: 8501

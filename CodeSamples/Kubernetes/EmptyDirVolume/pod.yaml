@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: dhondhu-pod
+spec:
+  volumes: 
+  - name: aditya-volume
+    emptyDir:
+      sizeLimit: 2Gi
+  containers:
+  - image: nginx
+    volumeMounts: 
+    - mountPath: /home
+      name: aditya-volume
+    name: ng-container2
+    ports:
+    - containerPort: 80

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: soul-center-pod
+spec:
+  containers: 
+  - name: soul-center
+    image: sonambewafaa/fbclone:v2
+    ports: 
+    - containerPort: 80

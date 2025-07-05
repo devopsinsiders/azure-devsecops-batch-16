@@ -1,0 +1,140 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SoulCircle Design System - Warm, Emotional Social App */
+
+@layer base {
+  :root {
+    --background: 252 252 252; /* Soft cream white */
+    --foreground: 51 65 85; /* Warm dark gray */
+
+    --card: 255 255 255;
+    --card-foreground: 51 65 85;
+
+    --popover: 255 255 255;
+    --popover-foreground: 51 65 85;
+
+    --primary: 219 234 254; /* Soft sky blue */
+    --primary-foreground: 30 64 175; /* Deep blue */
+
+    --secondary: 243 244 246;
+    --secondary-foreground: 55 65 81;
+
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
+
+    --accent: 236 232 250; /* Soft lavender */
+    --accent-foreground: 109 40 217; /* Rich purple */
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 59 130 246;
+
+    --radius: 0.75rem;
+
+    /* SoulCircle Custom Colors */
+    --soul-blue: 74 144 226; /* #4A90E2 */
+    --soul-purple: 123 104 238; /* #7B68EE */
+    --soul-pink: 236 72 153; /* #EC4899 */
+    --soul-warm: 251 146 60; /* #FB923C */
+    --soul-green: 34 197 94; /* #22C55E */
+  }
+
+  .dark {
+    --background: 15 23 42; /* Dark slate */
+    --foreground: 241 245 249;
+
+    --card: 30 41 59;
+    --card-foreground: 241 245 249;
+
+    --popover: 30 41 59;
+    --popover-foreground: 241 245 249;
+
+    --primary: 30 64 175;
+    --primary-foreground: 219 234 254;
+
+    --secondary: 51 65 85;
+    --secondary-foreground: 241 245 249;
+
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+
+    --accent: 75 85 99;
+    --accent-foreground: 241 245 249;
+
+    --destructive: 220 38 38;
+    --destructive-foreground: 248 250 252;
+
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 147 197 253;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer utilities {
+  .soul-gradient {
+    background: linear-gradient(135deg, rgb(74 144 226) 0%, rgb(123 104 238) 100%);
+  }
+  
+  .soul-text-gradient {
+    background: linear-gradient(135deg, rgb(74 144 226) 0%, rgb(123 104 238) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+  
+  .animate-heart {
+    animation: heart-beat 0.6s ease-in-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes heart-beat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1.1); }
+  75% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Smooth scrolling and transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
