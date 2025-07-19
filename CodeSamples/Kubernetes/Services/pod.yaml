@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hellodhondhu
+  labels:
+    app.kubernetes.io/name: hellodhondhu
+    papa: pushpa
+spec:
+  containers:
+  - name: hellodhondhu
+    image: sonambewafaa/hellodhondhu
+    ports:
+      - containerPort: 80
+
+--- 
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hellotondu
+  labels:
+    app.kubernetes.io/name: hellotondu
+    papa: pushpa
+spec:
+  containers:
+  - name: hellotondu
+    image: sonambewafaa/hellotondu
+    ports:
+      - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hellorondu
+  labels:
+    app.kubernetes.io/name: hellorondu
+    papa: pushpa
+spec:
+  containers:
+  - name: hellorondu
+    image: sonambewafaa/hellorondu
+    ports:
+      - containerPort: 80

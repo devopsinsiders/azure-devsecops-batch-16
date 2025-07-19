@@ -3,6 +3,8 @@ kind: PersistentVolume
 metadata:
   name: pyaar-ka-storage
 spec:
+  storageClassName: gym-lover
+  volumeMode: Filesystem
   accessModes: 
   - ReadWriteMany
   azureFile:

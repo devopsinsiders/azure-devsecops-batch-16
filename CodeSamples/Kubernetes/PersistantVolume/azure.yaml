@@ -1,0 +1,44 @@
+parameters:
+  - name: year
+    displayName: 'Report Year Folder'
+    type: string
+    default: '2025'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - checkout: self
+
+  - script: |
+      echo "Installing Pandoc and LaTeX..."
+      sudo apt-get update
+      sudo apt-get install -y pandoc texlive-xetex unzip wget
+    displayName: 'Install Pandoc, LaTeX, unzip, wget'
+
+  - script: |
+      echo "Downloading Eisvogel template..."
+      wget https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v3.2.0/Eisvogel.zip
+
+      echo "Unzipping Eisvogel..."
+      unzip Eisvogel.zip
+
+      echo "Creating Pandoc templates directory if not exists..."
+      mkdir -p ~/.local/share/pandoc/templates
+
+      echo "Moving eisvogel.latex to Pandoc templates..."
+      mv eisvogel.latex ~/.local/share/pandoc/templates/eisvogel.latex
+    displayName: 'Setup Eisvogel Template'
+
+  - script: |
+      echo "Generating PDF with Eisvogel..."
+      pandoc ${{ parameters.year }}/report.md -o ${{ parameters.year }}/report.pdf \
+        --from markdown --pdf-engine=xelatex --template=eisvogel --toc
+    displayName: 'Generate PDF with Eisvogel'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: ${{ parameters.year }}/report.pdf
+      artifactName: PenTestReport_${{ parameters.year }}_PDF
+      publishLocation: Container
+    displayName: 'Publish PDF Artifact'

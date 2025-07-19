@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: honeymoon-photos
+  name: dynamic-pvc
 spec:
-  storageClassName: gym-lover
-  volumeName: pyaar-ka-storage
+  storageClassName: azurefile
   resources:
     requests:
-      storage: 1Gi
+      storage: 2Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany

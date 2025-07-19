@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dynamic-photos-app
+spec:
+  containers:
+  - name: dynamic-photos-app
+    image: sonambewafaa/photos-app:v2
+    ports:
+      - containerPort: 8501
+    volumeMounts:
+    - mountPath: /app/photos
+      name: mera-volume
+
+  volumes: 
+  - name: mera-volume
+    persistentVolumeClaim:
+      claimName: dynamic-pvc
