@@ -3,7 +3,6 @@ kind: Pod
 metadata:
   name: hellodhondhu
   labels:
-    app.kubernetes.io/name: hellodhondhu
     papa: pushpa
 spec:
   containers:
@@ -19,7 +18,6 @@ kind: Pod
 metadata:
   name: hellotondu
   labels:
-    app.kubernetes.io/name: hellotondu
     papa: pushpa
 spec:
   containers:
@@ -35,7 +33,6 @@ kind: Pod
 metadata:
   name: hellorondu
   labels:
-    app.kubernetes.io/name: hellorondu
     papa: pushpa
 spec:
   containers:

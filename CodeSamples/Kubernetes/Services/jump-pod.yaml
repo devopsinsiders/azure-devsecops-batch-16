@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jump-pod
+spec:
+  containers:
+  - name: jump-pod
+    image: linuxserver/firefox
+    ports:
+      - containerPort: 3000

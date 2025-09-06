@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: useless
+spec:
+  replicas: 25
+  selector:
+    matchLabels:
+      app: useless
+  template:
+    metadata:
+      labels:
+        app: useless
+    spec:
+      containers:
+        - name: useless
+          image: sonambewafaa/useless:blue
+          ports:
+            - containerPort: 80
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 5
+      maxUnavailable: 5

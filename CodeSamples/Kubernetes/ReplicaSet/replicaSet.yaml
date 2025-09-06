@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: dhondhu-rs
+spec:
+  replicas: 4
+  selector: 
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: nginx-pod
+      labels: 
+        app: nginx
+    spec: 
+      containers:
+      - name: nginx1
+        image: nginx
+        ports:
+          - containerPort: 80
