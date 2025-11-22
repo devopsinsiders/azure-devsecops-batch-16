@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-todo-add-tasks-api-ingress
+spec:
+  ingressClassName: {{ .Values.addTask.ingress.ingressClass }}
+  rules:
+    - host: {{ .Values.addTask.ingress.host }}
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: {{ .Release.Name }}-todo-add-tasks-api
+                port:
+                  number: {{ .Values.addTask.ServicePort }}

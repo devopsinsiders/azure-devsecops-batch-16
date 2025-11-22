@@ -1,4 +1,0 @@
-port: 80
-ImageName: nginx
-Replicas: 2
-ServicePort: 80

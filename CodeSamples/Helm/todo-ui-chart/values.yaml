@@ -1,0 +1,48 @@
+common:
+  containerRegistryURL: devopsinsidersacr235.azurecr.io
+  ingressClass: azure-application-gateway
+ui:
+  replicas: 4
+  image:
+    name: todo-ui
+    tag: v4
+  port: 80
+  ServicePort: 80
+  ingress:
+    host: ui.jhandu.shop
+
+getTask:
+  replicas: 5
+  image:
+    name: todo-get-tasks-api
+    tag: v1
+  port: 8000
+  ServicePort: 80
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-786.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  ingress:
+    host: get-tasks-api.jhandu.shop
+    ingressClass: azure-application-gateway
+
+deleteTask:
+  replicas: 5
+  image:
+    name: todo-delete-tasks-api
+    tag: v1
+  port: 8000
+  ServicePort: 80
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-786.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  ingress:
+    host: delete-task-api.jhandu.shop
+    ingressClass: taklu
+
+addTask:
+  replicas: 5
+  image:
+    name: todo-add-tasks-api
+    tag: v1
+  port: 8000
+  ServicePort: 80
+  connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-786.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  ingress:
+    host: add-task-api.jhandu.shop
+    ingressClass: nginx
