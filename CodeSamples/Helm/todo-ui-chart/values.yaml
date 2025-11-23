@@ -1,8 +1,9 @@
 common:
   containerRegistryURL: devopsinsidersacr235.azurecr.io
   ingressClass: azure-application-gateway
+  
 ui:
-  replicas: 4
+  replicas: 2
   image:
     name: todo-ui
     tag: v4
@@ -12,7 +13,7 @@ ui:
     host: ui.jhandu.shop
 
 getTask:
-  replicas: 5
+  replicas: 2
   image:
     name: todo-get-tasks-api
     tag: v1
@@ -24,7 +25,7 @@ getTask:
     ingressClass: azure-application-gateway
 
 deleteTask:
-  replicas: 5
+  replicas: 2
   image:
     name: todo-delete-tasks-api
     tag: v1
@@ -33,10 +34,10 @@ deleteTask:
   connectionString: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-786.database.windows.net,1433;Database=sqldb-dev-todoapp;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   ingress:
     host: delete-task-api.jhandu.shop
-    ingressClass: taklu
+    ingressClass: azure-application-gateway
 
 addTask:
-  replicas: 5
+  replicas: 2
   image:
     name: todo-add-tasks-api
     tag: v1
